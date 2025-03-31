@@ -20,13 +20,13 @@ class Program
 
     static async Task Main(string[] args)
     {
-        await ListaJugadores();
+        await PlayersList();
         //Task.Delay(500);
-        await Partidas();
+        await Matches();
         ShowWiner();
     }
 
-    private static async Task ListaJugadores()
+    private static async Task PlayersList()
     {
         //var listaJugadores = await cliente.GetFromJsonAsync<List<string>>($"/jugadors");
         string participantes = await cliente.GetStringAsync("/jugadors");
@@ -62,7 +62,7 @@ class Program
 
     }
 
-    private static async Task Partidas()
+    private static async Task Matches()
     {
         for (int i = 1; i <= 10000; i++)
         {
